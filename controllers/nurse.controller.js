@@ -10,9 +10,9 @@ const getPatient = function(req, res) {
 };
 //list all patients -nurse
 const listOfPatients = function(req, res) {
-  patentinfo.find({}, function(err, retobj) {
+  patient.find({}, function(err, retobj) {
     var patients = {};
-    res.send(patients);
+    res.send(retobj);
   });
 };
 

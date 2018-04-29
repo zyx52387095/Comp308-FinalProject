@@ -12,15 +12,7 @@ router.post('/register', registerCntrl.register );
 // .post('/nurse', function(req,res,next){
 //     //todo
 // });
-router.get('/entry', function(req,res,next){
-    res.render('login/entry');
-});
-router.get('/patient',function(req,res,next){
-    res.render('login/patient');
-})
-router.get('/nurse', function(req,res,next){
-    res.render('login/nurse');
-});
+
 
 router.post('/patient',function(req,res,next){
     //todo

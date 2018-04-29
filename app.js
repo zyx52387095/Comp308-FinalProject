@@ -29,9 +29,9 @@ app.set('view engine', 'ejs');
 //app.use("/public", express.static(__dirname+'/public'));
 
 app.use('/', appRoutes);
-app.use('/login', loginRoutes);
-app.use('/patient', patientRoutes);
-app.use('/nurse',nurseRoutes);
+app.use('/api/login', loginRoutes);
+app.use('/api/patient', patientRoutes);
+app.use('/api/nurse',nurseRoutes);
 
 //set view engine to be ejs engine
 app.set('view engine', 'ejs');

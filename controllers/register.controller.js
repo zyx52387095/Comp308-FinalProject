@@ -11,14 +11,14 @@ const register = function(req, res) {
 
 patient.register(newPatient, function(err,patient){
     if(err){
-        res.status(0).json({
-            message:err.message,
-            obj: null,
+        res.json({
+            status: 0,
+            obj: null
             //token: null
         });
     }else {
-        res.status(1).json({
-            message: "patient registered",
+        res.json({
+            status: 1,
             obj:patient
         })
     }

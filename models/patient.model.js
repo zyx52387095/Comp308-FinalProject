@@ -72,7 +72,7 @@ patientSchema.methods.checkPassword = function(password, cbfn) {
 
 function doHash(val) {
   // 10000 - iteration, 64-key length, then convert to base64
-  return crypto.pbkdf2Sync(val, salt, 10000, 64, "sha512").toString("base64");
+  return crypto.pbkdf2Sync(val, 'salt', 10000, 64, "sha512").toString("base64");
 }
 
 module.exports = mongoose.model("patient", patientSchema);

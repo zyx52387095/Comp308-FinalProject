@@ -6,7 +6,7 @@
             <div class="card-header">Patient Vital Sign</div>
             <div class="card-body">
                 <form action="">
-                    <input id="patientid" value="<%= patient.id %>" name="patientid" type="hidden">
+                    <input id="patientid" value="<%= patient.patientid %>" name="patientid" type="hidden">
                     <div class="form-group">
                         <label for="bodytemperature">Body Temperature</label>
                         <input class="form-control" id="bodytemperature">
@@ -29,11 +29,22 @@
                     </div>
 
                     <br>
-                    <button type="button" class="btn btn-primary" onclick="patientVitalSignUpdate()">Login</button>
+                    <button type="button" class="btn btn-primary" onclick="patientVitalSignUpdate()">Update</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3" style="text-align: center">
+        <br>
+        <a href="/nurse/patient-list" class="btn btn-info">Patient List</a>
+    </div>
+</div>
+
 <%- include('../layouts/footer'); -%>
+
+<script>
+    patientVitalSignShow(<%=patient.patientid%>)
+</script>

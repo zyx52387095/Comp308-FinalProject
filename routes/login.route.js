@@ -3,6 +3,7 @@ const router = express.Router();
 const passport =require('passport');
 const registerCntrl = require('../controllers/register.controller');
 const patient = require("../models/patient.model");
+const nurse = require("../models/nurse.model");
 
 router.post('/register', registerCntrl.register );
 
@@ -40,7 +41,18 @@ router.post('/patient', function(req,res,next){
     })
 })
 router.post('/nurse', function(req,res,next){
-    //todo
+    nurse.findOne({username: req.body.username, password: req.body.password}, function (err, obj) {
+        if (err || !obj) {
+            res.json({
+                status: 0,
+                msg: 'Failed'
+            })
+        } else {
+            res.json({
+                status: 1
+            })
+        }
+    })
 });
 
 

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const nurse = require("../models/nurse.model");
 
 router.get('/', function (req, res, next) {
     res.render('index');
@@ -19,10 +20,22 @@ router.get('/nurse/patient-list', function (req, res, next) {
     res.render('nurse/patient-list')
 });
 
-router.get('/nurse/patient-vital-sign/:id', function (req, res, next) {
+router.get('/nurse/patient-vital-sign/:patientid', function (req, res, next) {
     let patient = {}
-    patient.id = req.params.id
+    patient.patientid = req.params.patientid
     res.render('nurse/patient-vital-sign', {patient:patient})
+});
+
+router.get('/nurse/new', function (req, res, next) {
+    nurse.findOne({username: 'Kate'}, function(err, obj) {
+        if (err || obj == null) {
+            let anurse = new nurse({username: 'Kate', password: '000000'});
+            anurse.save();
+            res.json(anurse)
+        } else {
+            res.json(obj)
+        }
+    });
 });
 
 router.get('/patient/symptoms',function(req,res,next){

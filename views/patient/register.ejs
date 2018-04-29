@@ -1,0 +1,32 @@
+<%- include('../layouts/header'); -%>
+
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+        <div class="card">
+            <div class="card-header">Patient Register</div>
+            <div class="card-body">
+                <form action="">
+                    <div class="form-group">
+                        <label for="patientid">PatientId</label>
+                        <input class="form-control" id="patientid" placeholder="Enter PatientId">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="username" class="form-control" id="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="fullname">Fullname</label>
+                        <input type="fullname" class="form-control" id="fullname" placeholder="Fullname">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="patientRegister()">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer'); -%>

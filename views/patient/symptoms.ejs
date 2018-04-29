@@ -1,0 +1,39 @@
+<%- include('../layouts/header'); -%>
+
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+        <div class="card">
+            <div class="card-header">Patient Symptoms</div>
+            <div class="card-body">
+                <form action="">
+                    <input type="hidden" id="patientid" value="<%= patient.id %>">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="fever">
+                        <label class="form-check-label" for="fever">Fever</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="Headache">
+                        <label class="form-check-label" for="Headache">Headache</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="Cough">
+                        <label class="form-check-label" for="Cough">Cough</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="Diarrhea">
+                        <label class="form-check-label" for="Diarrhea">Diarrhea</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dizziness">
+                        <label class="form-check-label" for="dizziness">Dizziness</label>
+                    </div>
+
+                    <br>
+                    <button type="button" class="btn btn-primary" onclick="updatePatientSymptoms()">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer'); -%>

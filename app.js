@@ -17,6 +17,7 @@ const conf=require('./config/'+env+".json");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+app.use(express.static('public'));  // support static resources
 
 // Create the database connection 
 mongoose.connect(conf.dburl); 

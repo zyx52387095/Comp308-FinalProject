@@ -1,0 +1,39 @@
+<%- include('../layouts/header'); -%>
+
+<div class="row login-row">
+    <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+        <div class="card">
+            <div class="card-header">Patient Vital Sign</div>
+            <div class="card-body">
+                <form action="">
+                    <input id="patientid" value="<%= patient.id %>" name="patientid" type="hidden">
+                    <div class="form-group">
+                        <label for="bodytemperature">Body Temperature</label>
+                        <input class="form-control" id="bodytemperature">
+                    </div>
+                    <div class="form-group">
+                        <label for="heartrate">Heart Rate</label>
+                        <input class="form-control" id="heartrate">
+                    </div>
+                    <div class="form-group">
+                        <label for="bloodpresure">Blood Presure</label>
+                        <input class="form-control" id="bloodpresure">
+                    </div>
+                    <div class="form-group">
+                        <label for="respiratoryrate">Respiratory Rate</label>
+                        <input class="form-control" id="respiratoryrate">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="headache">
+                        <label class="form-check-label" for="headache">Headache</label>
+                    </div>
+
+                    <br>
+                    <button type="button" class="btn btn-primary" onclick="patientLogin">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer'); -%>

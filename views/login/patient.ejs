@@ -1,0 +1,24 @@
+<%- include('../layouts/header'); -%>
+
+    <div class="row login-row">
+        <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3">
+            <div class="card">
+                <div class="card-header">Patient Login</div>
+                <div class="card-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="patientid">PatientId</label>
+                            <input class="form-control" id="patientid" placeholder="Enter Patient Id">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="patientLogin">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('../layouts/footer'); -%>

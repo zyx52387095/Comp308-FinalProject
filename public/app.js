@@ -55,3 +55,11 @@ function updatePatientSymptoms() {
     })
 }
 
+function authenticator() {
+    var token = Cookies.get('token');
+    if (token === undefined || token === null) {
+        location.href = '/login/entry'
+        return;
+    }
+    $('.wrapper').show();
+}

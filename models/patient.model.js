@@ -4,10 +4,7 @@ const crypto = require("crypto");
 
 var patientSchema = new Schema(
   {
-    patientid: {
-        type: Number,
-        required: true
-      },
+
     username: {
       type: String,
       unique: true,

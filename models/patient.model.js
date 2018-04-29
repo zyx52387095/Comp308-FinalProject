@@ -25,21 +25,21 @@ var patientSchema = new Schema(
       type: String,
       required: true
     },
-    // symptoms: [{
-    //     fever: boolean,
-    //     headache: boolean,
-    //     headache: boolean,
-    //     headache: boolean,
-    //     cough: boolean
-    // }],
+    symptoms: [{
+        fever: Boolean,
+        headache: Boolean,
+        cough: Boolean,
+        diarrhea: Boolean,
+        dizziness: Boolean
+    }],
 
-    // vitalsign: [{
-    //     fever: boolean,
-    //     headache: boolean,
-    //     headache: boolean,
-    //     headache: boolean,
-    //     cough: boolean
-    // }],
+    vitalsigns: [{
+        bodytemperature: Number,
+        heartrate: Number,
+        bloodpresure: Number,
+        headache: Number,
+        respiratoryrate: Number
+    }],
 
 
 

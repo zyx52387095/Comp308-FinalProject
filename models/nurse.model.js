@@ -28,12 +28,12 @@ var nurseSchema = new Schema(
     //     user.save(nurse);
     // }
     
-    patientSchema.statics.findbyname = function(name, nurse){
+    nurseSchema.statics.findbyname = function(name, nurse){
         usermodel.findOne({username:name},nurse);
     }
     
     
-    patientSchema.methods.checkPassword = function (password, nurse) {
+    nurseSchema.methods.checkPassword = function (password, nurse) {
         if (this.password === doHash(password)) {
             nurse(null, true);
         } else {

@@ -1,5 +1,6 @@
 const router =  require('express').Router();
 const patientCntrl = require('../controllers/patient.controller');
+const logincntrl = require('../controllers/register.controller')
 
 router.route('/home')
 .post(patientCntrl.upsertSymptom)
@@ -10,8 +11,6 @@ router.route('/:patientid')
 .get();
 
 
-router.post('/register',function(req,res,next){
-
-})
+router.post('/register',logincntrl.register);
 
 module.exports = router;

@@ -2,11 +2,7 @@ var express = require('express');
 var router = express.Router();
 const nurse = require("../models/nurse.model");
 
-router.get('/', function (req, res, next) {
-    res.render('index');
-});
-
-router.get('/login/entry', function(req,res,next){
+router.get('/', function(req,res,next){
     res.render('login/entry');
 });
 router.get('/login/patient',function(req,res,next){

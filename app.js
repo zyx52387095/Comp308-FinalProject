@@ -36,5 +36,5 @@ app.use('/nurse',nurseRoutes);
 app.set('view engine', 'ejs');
 
 
-app.listen(conf.patientRoutes);
+app.listen(conf.port);
 console.log("app started on port ", conf.port);

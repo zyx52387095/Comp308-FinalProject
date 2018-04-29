@@ -97,6 +97,7 @@ function patientLogout()
 {
     Cookies.remove('patientid');
     alert('Success')
+    location.href = '/'
 }
 
 function patientSetSymptoms()

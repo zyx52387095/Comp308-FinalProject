@@ -25,6 +25,10 @@ router.get('/nurse/patient-vital-sign/:id', function (req, res, next) {
     res.render('nurse/patient-vital-sign', {patient:patient})
 });
 
+router.get('/patient/symptoms',function(req,res,next){
+    res.render('patient/symptoms');
+})
+
 router.get('/patient/register',function(req,res,next){
     res.render('patient/register');
 })

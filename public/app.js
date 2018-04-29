@@ -19,14 +19,20 @@ function nurseLogin() {
 
 function patientLogin() {
     $.ajax({
-        url: '/login/patient',
+        url: '/api/login/patient',
         method: 'post',
         data: {
-            username: $('#patientid').val(),
+            patientid: $('#patientid').val(),
             password: $('#password').val()
         },
         success: function (msg) {
-            console.log(123 )
+            if (msg.status ===1) {
+                Cookies.set('patientid', msg.patientid);
+                alert('Login success')
+                location.href = '/patient/symptoms'
+            } else {
+                alert(msg.msg)
+            }
         },
         error: function (err) {
             alert('error')
@@ -39,15 +45,19 @@ function updatePatientSymptoms() {
         url: '/api/patient/symptoms',
         method: 'post',
         data: {
-            patientid: $('#patientid').val(),
-            fever: $('#fever').val(),
-            headache: $('#headache').val(),
-            cough: $('#cough').val(),
-            diarrhea: $('#diarrhea').val(),
-            dizziness: $('#dizziness').val()
+            patientid: Cookies.get('patientid'),
+            fever: $('#fever').prop('checked'),
+            headache: $('#headache').prop('checked'),
+            cough: $('#cough').prop('checked'),
+            diarrhea: $('#diarrhea').prop('checked'),
+            dizziness: $('#dizziness').prop('checked')
         },
         success: function (msg) {
-            console.log(123 )
+            if (msg.status ===1) {
+                alert('Success')
+            } else {
+                alert(msg.msg)
+            }
         },
         error: function (err) {
             alert('error')
@@ -74,6 +84,33 @@ function patientRegister() {
         },
         error: function () {
             alert('error')
+        }
+    })
+}
+
+function patientLogout()
+{
+    Cookies.remove('patientid');
+    alert('Success')
+}
+
+function patientSetSymptoms()
+{
+    $.ajax({
+        url: '/api/patient/'+Cookies.get('patientid'),
+        method: 'get',
+        success: function (msg) {
+            if (msg.status === 1) {
+                $.each(msg.patient.symptoms[0], function (i, e) {
+                    $('#'+i).prop('checked', e)
+                })
+            } else {
+                alert('Patient info error.')
+                location.href = '/login/patient'
+            }
+        },
+        error: function (err) {
+            alert(err)
         }
     })
 }

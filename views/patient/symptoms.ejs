@@ -6,25 +6,25 @@
             <div class="card-header">Patient Symptoms</div>
             <div class="card-body">
                 <form action="">
-                    <input type="hidden" id="patientid" value="<%= patient.id %>">
+                    <input type="hidden" id="patientid">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="fever">
+                        <input value="1" type="checkbox" class="form-check-input" id="fever">
                         <label class="form-check-label" for="fever">Fever</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="Headache">
-                        <label class="form-check-label" for="Headache">Headache</label>
+                        <input value="1" type="checkbox" class="form-check-input" id="headache">
+                        <label class="form-check-label" for="headache">Headache</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="Cough">
-                        <label class="form-check-label" for="Cough">Cough</label>
+                        <input value="1" type="checkbox" class="form-check-input" id="cough">
+                        <label class="form-check-label" for="cough">Cough</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="Diarrhea">
-                        <label class="form-check-label" for="Diarrhea">Diarrhea</label>
+                        <input value="1" type="checkbox" class="form-check-input" id="diarrhea">
+                        <label class="form-check-label" for="diarrhea">Diarrhea</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dizziness">
+                        <input value="1" type="checkbox" class="form-check-input" id="dizziness">
                         <label class="form-check-label" for="dizziness">Dizziness</label>
                     </div>
 
@@ -36,4 +36,14 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12 offset-md-2 offset-lg-3" style="text-align: center;">
+        <br>
+        <button class="btn btn-danger" onclick="patientLogout()">Logout</button>
+    </div>
+</div>
+
 <%- include('../layouts/footer'); -%>
+<script>
+    patientSetSymptoms()
+</script>
